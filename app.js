@@ -32,15 +32,21 @@ $(function() {
 	  });
 	});
 	var count = 0;
-	myAppCountOnline.once("value",function(online) {
-	    	if(online.val() && online.val()!=='null') {
-    			count = online.val().count;	
-    			myAppCountOnline.set({count: count++});
+	myAppCountOnline.orderByChild("ip").limitToLast(1).once("value",function(online) {
+			var countItem = online.val();
+			console.log(countItem);
+	    	if(countItem&&countItem!=='null') 
+	    	{
+    			count = countItem.count;	
+    			console.log(count); 
+    			count = count+1;
+    			myAppCountOnline.push().set({count: count});
     		} else {
     			count=1;
+    			myAppCountOnline.push().set({count: 1});
     		}
 	    });
-	myAppCountOnline.onDisconnect().set({count: count});	
+	myAppCountOnline.onDisconnect()	.set({count: count--});	
 	//set chat name
 	$('#setname').on('click',function(e) {
 		e.preventDefault();
