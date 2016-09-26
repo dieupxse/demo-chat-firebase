@@ -3,50 +3,67 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Test chat</title>
+	<title>CHAT WITH STRANGER VERSION 1.0</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	
 	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
-	<script src="app.js" type="text/javascript" charset="utf-8" ></script>
+	<script src="https://use.fontawesome.com/2e021aec9c.js"></script>
+	<script src="js/jquery.nicescroll.js" type="text/javascript" charset="utf-8" ></script>
+	<script src="js/app.js" type="text/javascript" charset="utf-8" ></script>
 </head>
 <body>
 <div class="container">
-	<div class="form-group" style="margin-top: 50px;">
-			<div class="row">
-				<div class="col-md-4">
-					<input type="text" id="name" class="form-control" placeholder="type your name">
+	<h1 class="text-center" >TALK TO STRANGERS</h1>
+	<div class="form-group row">
+		<div class="col-md-8">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<div class="panel-title"><b><i class="fa fa-comments"></i> CONVERSATION</b></div>
 				</div>
-				<div class="col-md-4">
-					<input type="text" id="chatto" class="form-control" placeholder="chat to someone">		
-				</div>
-				<div class="col-md-4">
-					<button class="btn btn-primary btn-block" id="setname" type="button">Set your name</button>	
-				</div>
-			</div>
-	</div>
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<div class="panel-title"><b>CONVERSATION</b></div>
-		</div>
-		<div class="panel-body">
-			<ul id="result"></ul>
-		</div>
-		<div class="panel-footer">
-			<form id="chatform">
-				<input type="hidden" id="chatID" value="">
-				<input type="hidden" id="recID" value="">
-				<div class="input-group">
-					<input class="form-control" id="text" type="text" placeholder="type something to chat...">
-					<div class="input-group-btn">
-						<button type="submit" class="btn btn-default">SEND</button>
+				<div class="panel-body" style="padding: 0;">
+					<div id="result">
+						
 					</div>
 				</div>
-			</form>
+				<div class="panel-footer">
+					<form id="chatform">
+						<div class="input-group">
+							<div class="input-group-btn">
+								<button class="btn btn-primary"  id="findStranger" type="button"><i class="fa fa-plus"></i> New</button>
+							</div>
+							<input class="form-control" disabled="disabled" required="required" id="text" type="text" placeholder="type something to chat...">
+							<div class="input-group-btn">
+								<button type="submit" disabled="disabled" class="btn btn-default"><i class="fa fa-send"></i> SEND</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
 		</div>
+		<div class="col-md-4">
+			<div class="form-group" >
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<div class="panel-title"><i class="fa fa-users"></i> Total Online: <span id="totalOnline"></span></div>
+					</div>
+					<div class="panel-body">
+						<div class="form-group">Your ID: <b id="yourId"></b> </div>
+						<div class="form-group">Guest ID: <b id="guestId"></b> </div>
+						<div class="form-group">Room ID: <b id="roomId"></b> </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="copyright text-center">
+		Copyright © 2016 by <a href="https://jacobpham.info" target="_blank">Jacob Phạm</a>
 	</div>
 </div>
 </body>

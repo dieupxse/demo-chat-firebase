@@ -1,0 +1,90 @@
+body {
+	
+}
+#result {
+	height: 300px;
+	overflow: hidden;
+	overflow-y: auto;
+	padding: 10px 0;
+}
+.botItem {
+	border-bottom: 1px solid #eee;
+	padding: 10px;
+}
+.botItem .name {
+	font-weight: bold;
+}
+.botItem.guest {
+	background: #f9f9f9;
+}
+.botItem.danger {
+	background: #F2DEDE;
+	font-weight: bold;
+	color: #A94442;
+}
+.botItem.warning {
+	background: #FCF8E3;
+	font-weight: bold;
+	color: #8A6D3B;
+}
+.botItem.info {
+	background: #D9EDF7;
+	font-weight: bold;
+	color: #55708F;	
+}
+.chat-item {
+	padding: 5px 10px;
+	margin:5px;
+	border-radius: 4px;
+	min-width: 40%;
+	max-width: 80%;
+	position: relative;
+}
+
+.chat-item .chat-meta {
+	font-weight: bold;
+	font-size: 13px;
+	text-transform: capitalize;
+	margin-bottom: 5px;
+}
+.chat-item .chat-meta time {
+	font-size: 11px;
+	color: #333;
+	font-weight: normal;
+}
+.chat-item.you {
+	background: #4080FF;
+	color: #fff;
+	float: right;
+	margin-right: 15px;
+}
+.chat-item.you .chat-meta {
+	text-align: left;
+}
+.chat-item.guest {
+	background: #F1F0F0;
+	color: #333;
+	float: left;
+	margin-left: 15px;
+}
+.chat-item.you time {color: #fff;}
+
+.chat-item.you:before,
+.chat-item.guest:before {
+	content: '';
+	display: block;
+	position: absolute;
+	right: -15px;
+	top:10px;
+	width: 1px; height: 1px;
+	border: 10px solid #4080FF;
+	border-top-color: transparent;
+	border-right-color: transparent;
+	z-index: 9999;
+}
+.chat-item.guest:before {
+	left: -15px;
+	border-color: #F1F0F0;
+	border-top-color: transparent;
+	border-left-color: transparent;
+}
